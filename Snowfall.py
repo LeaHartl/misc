@@ -77,5 +77,6 @@ def update(frame_number):
 
 
 # # Construct the animation, using the update function as the animation director.
-animation = FuncAnimation(fig, update, interval=100, frames=50)#, repeat=False)
-plt.show()
+animation = FuncAnimation(fig, update, interval=100, frames=100)#, repeat=False)
+# plt.show()
+animation.save('animation.gif', writer='imagemagick', fps=10)
