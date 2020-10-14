@@ -6,7 +6,7 @@ import matplotlib.pyplot as plt
 from matplotlib.patches import Rectangle
 from matplotlib.collections import PatchCollection
 from matplotlib.colors import ListedColormap
-from matplotlib.colors import DivergingNorm
+from matplotlib.colors import TwoSlopeNorm
 
 ## adapted from: https://matplotlib.org/matplotblog/posts/warming-stripes/
 ## get mass balance data from wgms website and plot as stripes, individual glacier.
@@ -28,7 +28,7 @@ lim_neg= mb.min()
 
 #set diverging color map and make norm so it is centered at zero.
 cmap='RdBu'
-divnorm = DivergingNorm(vmin=lim_neg, vcenter=0, vmax=lim_pos)
+divnorm = TwoSlopeNorm(vmin=lim_neg, vcenter=0, vmax=lim_pos)
 
 
 # make figure
