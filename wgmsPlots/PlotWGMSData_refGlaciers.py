@@ -6,7 +6,7 @@ import matplotlib.pyplot as plt
 from matplotlib.patches import Rectangle
 from matplotlib.collections import PatchCollection
 from matplotlib.colors import ListedColormap
-from matplotlib.colors import DivergingNorm
+from matplotlib.colors import TwoSlopeNorm
 
 ## get mass balance data from wgms website and plot as stripes, reference glaciers.
 ## example URL of WGMS .csv file: 'http://wgms.ch/data/min-data-series/FoG_MB_491.csv'
@@ -36,14 +36,13 @@ for wgmsid in refgl_IDs:
 	glaciers.append(data.NAME.values[0])
 	print('collected ', data.NAME.values[0])
 
-print(MB_df[408])
 # get mb range of all ref. glaciers
 lim_pos= MB_df.max().max()
 lim_neg= MB_df.min().min()
 
 #set diverging color map and make norm so it is centered at zero.
 cmap='RdBu'
-divnorm = DivergingNorm(vmin=lim_neg, vcenter=0, vmax=lim_pos)
+divnorm = TwoSlopeNorm(vmin=lim_neg, vcenter=0, vmax=lim_pos)
 
 # make figure/ subplots
 fig, axs = plt.subplots(len(MB_df.columns), 1, figsize=(10, 10), sharex=True)
