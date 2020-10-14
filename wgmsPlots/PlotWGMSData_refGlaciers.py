@@ -52,7 +52,7 @@ for i, col in enumerate(MB_df.columns):
 	ax[i].set_yticks([])
 	dat = pd.to_numeric(MB_df[col].dropna())
 	col = PatchCollection([
-    	Rectangle((y, 0), 1, 1)
+    	Rectangle((y+0.5, 0), 1, 1)
     	for y in range(dat.index.values[0], dat.index.values[-1] + 1)
 	])
 	col.set_array(dat.values)
@@ -61,7 +61,7 @@ for i, col in enumerate(MB_df.columns):
 	col.set_clim(lim_neg, lim_pos)
 	cb= ax[i].add_collection(col)
 	ax[i].set_ylim(0, 1)
-	ax[i].set_xlim(1918,  2020)
+	ax[i].set_xlim(1917,  2020)
 	ax[i].annotate(glaciers[i],xy=(1920 ,0.2),xycoords='data')
 	ax[i].set_facecolor('grey')
 
