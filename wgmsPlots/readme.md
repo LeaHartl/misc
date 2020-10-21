@@ -1,4 +1,4 @@
-Plots to display WGMS annual mass balance data in "warming stripes" style.
+Plots to display WGMS annual mass balance data in "warming stripes" style. Reads csv files available for reference glaciers.
 
 PlotWGMSDATA.py plots one glacier, WGMS ID can be set to select which one.
 PlotWGMSDATA_refGlaciers.py makes subplots of all reference glaciers that I found the IDs for (Pasterze is missing).
